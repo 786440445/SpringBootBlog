@@ -19,10 +19,10 @@ import com.wip.model.ContentDomain;
 import com.wip.service.site.SiteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
@@ -30,16 +30,16 @@ public class SiteServiceImpl implements SiteService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SiteServiceImpl.class);
 
-    @Autowired
+    @Resource
     private CommentDao commentDao;
 
-    @Autowired
+    @Resource
     private ContentDao contentDao;
 
-    @Autowired
+    @Resource
     private MetaDao metaDao;
 
-    @Autowired
+    @Resource
     private AttAchDao attAchDao;
 
 

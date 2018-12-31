@@ -10,9 +10,9 @@ import com.github.pagehelper.PageInfo;
 import com.wip.dao.LogDao;
 import com.wip.model.LogDomain;
 import com.wip.service.log.LogService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -22,7 +22,7 @@ import java.util.List;
 public class LogServiceImpl implements LogService {
 
 
-    @Autowired
+    @Resource
     private LogDao logDao;
 
 

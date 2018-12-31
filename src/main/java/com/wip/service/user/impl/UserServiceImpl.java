@@ -10,12 +10,12 @@ import com.wip.dao.UserDao;
 import com.wip.exception.BusinessException;
 import com.wip.model.UserDomain;
 import com.wip.service.user.UserService;
-import com.wip.utils.APIResponse;
 import com.wip.utils.TaleUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 /**
  * 用户相关Service接口实现
@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Resource
     private UserDao userDao;//这里会报错，但是并不影响
 
 

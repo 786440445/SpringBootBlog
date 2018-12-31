@@ -11,19 +11,19 @@ import com.wip.exception.BusinessException;
 import com.wip.model.OptionsDomain;
 import com.wip.service.option.OptionService;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
 @Service
 public class OptionServiceImpl implements OptionService {
 
-    @Autowired
+    @Resource
     private OptionDao optionDao;
 
     @Override

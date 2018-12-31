@@ -18,12 +18,12 @@ import com.wip.service.comment.CommentService;
 import com.wip.utils.DateKit;
 import com.wip.utils.TaleUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,10 +31,10 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class CommentServiceImpl implements CommentService {
 
-    @Autowired
+    @Resource
     private CommentDao commentDao;
 
-    @Autowired
+    @Resource
     private ContentService contentService;
 
     private static final Map<String,String> STATUS_MAP = new ConcurrentHashMap<>();

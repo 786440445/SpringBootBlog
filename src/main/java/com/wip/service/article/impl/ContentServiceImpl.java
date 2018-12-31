@@ -22,27 +22,27 @@ import com.wip.model.RelationShipDomain;
 import com.wip.service.article.ContentService;
 import com.wip.service.meta.MetaService;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class ContentServiceImpl implements ContentService {
 
-    @Autowired
+    @Resource
     private ContentDao contentDao;
 
-    @Autowired
+    @Resource
     private MetaService metaService;
 
-    @Autowired
+    @Resource
     private RelationShipDao relationShipDao;
 
-    @Autowired
+    @Resource
     private CommentDao commentDao;
 
     @Transactional
