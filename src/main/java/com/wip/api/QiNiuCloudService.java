@@ -25,8 +25,8 @@ public class QiNiuCloudService {
     /**
      * 密钥凭证
      */
-    private static final String ACCESS_KEY = "";
-    private static final String SECRET_KEY = "";
+    private static final String ACCESS_KEY = "1111111";
+    private static final String SECRET_KEY = "2222222";
     /**
      * 仓库
      */

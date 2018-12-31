@@ -96,7 +96,6 @@ public class AttachController extends BaseController {
             for (MultipartFile file :files) {
 
                 String fileName = TaleUtils.getFileKey(file.getOriginalFilename().replaceFirst("/", ""));
-
                 QiNiuCloudService.upload(file, fileName);
                 AttAchDomain attAchDomain = new AttAchDomain();
                 HttpSession session = request.getSession();

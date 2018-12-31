@@ -43,9 +43,7 @@ public class SettingController extends BaseController {
     public String index(HttpServletRequest request) {
         List<OptionsDomain> optionsList = optionService.getOptions();
         Map<String, String> options = new HashMap<>();
-        optionsList.forEach((option) ->{
-            options.put(option.getName(),option.getValue());
-        });
+        optionsList.forEach((option) ->{options.put(option.getName(),option.getValue());});
         request.setAttribute("options", options);
         return "admin/setting";
     }
@@ -54,7 +52,6 @@ public class SettingController extends BaseController {
     @PostMapping(value = "")
     @ResponseBody
     public APIResponse saveSetting(HttpServletRequest request) {
-
         try {
             Map<String, String[]> parameterMap = request.getParameterMap();
             Map<String, String> querys = new HashMap<>();
