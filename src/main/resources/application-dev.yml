@@ -23,13 +23,14 @@ spring:
       time-between-eviction-runs-millis: 60000
       #一个连接在池中最小生存的时间
       min-evictable-idle-time-millis: 300000
-      validation-query: SELECT 'x'
+      validation-query: SELECT 'x' FROM DUAL
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-      #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
-      pool-prepared-statements: false
-      max-pool-prepared-statement-per-connection-size: 20
+#      #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+#      pool-prepared-statements: false
+#      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat
   thymeleaf:
       prefix: classpath:/templates/
       check-template-location: true
@@ -67,4 +68,4 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
-#  returnPageInfo: check
+  returnPageInfo: check

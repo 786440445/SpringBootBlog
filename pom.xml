@@ -75,7 +75,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>6.0.0</scope>
+            <scope>6.0.5</scope>
         </dependency>
 
         <dependency>
