@@ -27,9 +27,9 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-#      #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
-#      pool-prepared-statements: false
-#      max-pool-prepared-statement-per-connection-size: 20
+      #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
 
   thymeleaf:
       prefix: classpath:/templates/
@@ -60,8 +60,8 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.wip.model
 
-#swagger:
-#  show: true
+swagger:
+  show: true
 #分页
 pagehelper:
   helper-dialect: mysql
