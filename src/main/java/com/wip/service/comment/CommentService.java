@@ -51,4 +51,10 @@ public interface CommentService {
      * @param status
      */
     void updateCommentStatus(Integer coid, String status);
+
+    /**
+     * 删除评论
+     * @param coid
+     */
+    void deleteComment(Integer coid);
 }

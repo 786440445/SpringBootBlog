@@ -137,4 +137,12 @@ public class CommentServiceImpl implements CommentService {
             throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
         commentDao.updateCommentStatus(coid, status);
     }
+
+    @Override
+    @CacheEvict(value = "commentCache", allEntries = true)
+    public void deleteComment(Integer coid) {
+        if (null == coid)
+            throw BusinessException.withErrorCode(ErrorConstant.Common.PARAM_IS_EMPTY);
+        commentDao.deleteComment(coid);
+    }
 }
