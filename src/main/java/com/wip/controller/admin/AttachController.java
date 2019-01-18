@@ -29,7 +29,13 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 @Api("文件管理")
 @Controller
@@ -71,11 +77,29 @@ public class AttachController extends BaseController {
     public void fileUploadToTencentCloud(
             HttpServletRequest request,
             HttpServletResponse response,
-            @ApiParam(name = "editormd-image-file", value = "文件数组", required = true)
+            @ApiParam(name = "editormd-image-file", value = "单文件上传", required = true)
             @RequestParam(name = "editormd-image-file", required = true)
             MultipartFile file
     ) {
+        try {
+            request.setCharacterEncoding("UTF-8");
+            response.setHeader("Content-Type","text/html");
 
+            String fileName = TaleUtils.getFileKey(file.getOriginalFilename().replaceFirst("/", ""));
+            QiNiuCloudService.upload(file, fileName);
+            AttAchDomain attAchDomain = new AttAchDomain();
+            HttpSession session = request.getSession();
+            UserDomain sessionUser = (UserDomain) session.getAttribute(WebConst.LOGIN_SESSION_KEY);
+            attAchDomain.setAuthorId(sessionUser.getUid());
+            attAchDomain.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
+            attAchDomain.setFname(fileName);
+            attAchDomain.setFkey(QiNiuCloudService.QINIU_UPLOAD_SITE + fileName);
+            attAchService.addAttAch(attAchDomain);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw BusinessException.withErrorCode(ErrorConstant.Att.ADD_NEW_ATT_FAIL)
+                    .withErrorMessageArguments(e.getMessage());
+        }
     }
 
 

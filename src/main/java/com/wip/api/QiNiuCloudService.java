@@ -25,17 +25,17 @@ public class QiNiuCloudService {
     /**
      * 密钥凭证
      */
-    private static final String ACCESS_KEY = "1111111";
-    private static final String SECRET_KEY = "2222222";
+    private static final String ACCESS_KEY = "wSPyqykQ2IVAE13E7bVSH0OblrTjpvX4ZkcxmHxA";
+    private static final String SECRET_KEY = "VdmQisZ0FOvYSTdLZzPhVr7b3HesdYBS2MsFUDxC";
     /**
      * 仓库
      */
-    private static final String BUCKET = "";
+    private static final String BUCKET = "my-blog";
 
     /**
      * 七牛外网访问地址
      */
-    public static final String QINIU_UPLOAD_SITE = "";
+    public static final String QINIU_UPLOAD_SITE = "https://portal.qiniu.com";
 
     /**
      * 上传文件到七牛公共方法
