@@ -84,15 +84,15 @@ public class AttachController extends BaseController {
         try {
             request.setCharacterEncoding("UTF-8");
             response.setHeader("Content-Type","text/html");
-
-            String fileName = TaleUtils.getFileKey(file.getOriginalFilename().replaceFirst("/", ""));
+            String showName = file.getOriginalFilename();
+            String fileName = TaleUtils.getFileKey(showName.replaceFirst("/", ""));
             QiNiuCloudService.upload(file, fileName);
             AttAchDomain attAchDomain = new AttAchDomain();
             HttpSession session = request.getSession();
             UserDomain sessionUser = (UserDomain) session.getAttribute(WebConst.LOGIN_SESSION_KEY);
             attAchDomain.setAuthorId(sessionUser.getUid());
             attAchDomain.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
-            attAchDomain.setFname(fileName);
+            attAchDomain.setFname(showName);
             attAchDomain.setFkey(QiNiuCloudService.QINIU_UPLOAD_SITE + fileName);
             attAchService.addAttAch(attAchDomain);
         } catch (IOException e) {
@@ -118,15 +118,15 @@ public class AttachController extends BaseController {
             response.setHeader("Content-Type","text/html");
 
             for (MultipartFile file :files) {
-
-                String fileName = TaleUtils.getFileKey(file.getOriginalFilename().replaceFirst("/", ""));
+                String showName = file.getOriginalFilename();
+                String fileName = TaleUtils.getFileKey(showName.replaceFirst("/", ""));
                 QiNiuCloudService.upload(file, fileName);
                 AttAchDomain attAchDomain = new AttAchDomain();
                 HttpSession session = request.getSession();
                 UserDomain sessionUser = (UserDomain) session.getAttribute(WebConst.LOGIN_SESSION_KEY);
                 attAchDomain.setAuthorId(sessionUser.getUid());
                 attAchDomain.setFtype(TaleUtils.isImage(file.getInputStream()) ? Types.IMAGE.getType() : Types.FILE.getType());
-                attAchDomain.setFname(fileName);
+                attAchDomain.setFname(showName);
                 attAchDomain.setFkey(QiNiuCloudService.QINIU_UPLOAD_SITE + fileName);
                 attAchService.addAttAch(attAchDomain);
             }
