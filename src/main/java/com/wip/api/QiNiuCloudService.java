@@ -35,7 +35,7 @@ public class QiNiuCloudService {
     /**
      * 七牛外网访问地址
      */
-    public static final String QINIU_UPLOAD_SITE = "https://portal.qiniu.com";
+    public static final String QINIU_UPLOAD_SITE = "";
 
     /**
      * 上传文件到七牛公共方法
