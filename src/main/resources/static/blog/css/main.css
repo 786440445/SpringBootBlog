@@ -297,7 +297,7 @@ img {
   height: auto;
 }
 .img-rounded{
-      border-radius: 6px;
+  border-radius: 6px;
 }
 hr {
   margin: 40px 0;
@@ -2619,7 +2619,7 @@ pre .javascript .function {
 .header {
   position: relative;
   margin: 0 auto;
-  width: 960px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .header {
@@ -2681,7 +2681,7 @@ pre .javascript .function {
   }
 }
 .container .main-inner {
-  width: 960px;
+  width: 80%;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .container .main-inner {
@@ -2697,7 +2697,7 @@ pre .javascript .function {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 700px;
+  width: calc(100% - 260px);
   background: #fff;
   min-height: 700px;
   box-shadow: initial;
@@ -3009,11 +3009,11 @@ pre .javascript .function {
 }
 
 .post-toc-content ul {
-            text-align: left;
-        }
+  text-align: left;
+}
 .post-toc-content li {
-            list-style: none;
-        }
+  list-style: none;
+}
 .django-ckeditor-widget{
   display: block !important;
 }
