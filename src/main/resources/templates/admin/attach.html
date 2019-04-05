@@ -78,9 +78,9 @@
                         <th:block th:unless="${commons.is_empty(attachs)}">
                             <th:block th:each="attach : ${attachs.list}">
                                 <div class="col-md-2 text-center m-t-10">
-                                    <a th:href="'http://pmybpgdxe.bkt.clouddn.com/' + ${attach.fkey}" target="_blank">
+                                    <a th:href="'http://cdn.fchengli.com/' + ${attach.fkey}" target="_blank">
                                         <img class="attach-img"
-                                             th:src="@{${attach.ftype == 'image'}?'http://pmybpgdxe.bkt.clouddn.com/' +${attach.fkey}: '/admin/images/attach.png'}"
+                                             th:src="@{${attach.ftype == 'image'}?'http://cdn.fchengli.com/' +${attach.fkey}: '/admin/images/attach.png'}"
                                              th:title="${attach.fname}"/>
                                     </a>
                                     <div class="clearfix m-t-10">
@@ -90,7 +90,7 @@
                                         </span>
                                     </div>
                                     <div class="clearfix">
-                                        <button th:attr="url='http://pmybpgdxe.bkt.clouddn.com/'+${attach.fkey}" type="button"
+                                        <button th:attr="url='http://cdn.fchengli.com/'+${attach.fkey}" type="button"
                                                 class="btn btn-warning btn-sm waves-effect waves-light m-t-5 copy">
                                             <i class="fa fa-copy"></i> <span>复制</span>
                                         </button>
