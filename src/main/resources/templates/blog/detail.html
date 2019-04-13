@@ -36,7 +36,8 @@
                             </div>
                         </header>
                         <div id="doc-content" class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-                            <th:block th:utext="${commons.article(article.content)}"></th:block>
+                            <!--<th:block th:utext="${commons.article(article.content)}"></th:block>-->
+                            <textarea style="display:none;">${commons.article(article.content)}</textarea>
                         </div>
                     </div>
                 </article>
