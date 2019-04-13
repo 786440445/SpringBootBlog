@@ -3908,9 +3908,9 @@
             pageBreak            : true,
             atLink               : true,    // for @link
             emailLink            : true,    // for mail address auto link
-            tex                  : false,
+            tex                  : true,
             taskList             : false,   // Github Flavored Markdown task lists
-            emoji                : false,
+            emoji                : true,
             flowChart            : false,
             sequenceDiagram      : false,
             previewCodeHighlight : true
