@@ -39,25 +39,26 @@
                             </div>
                         </header>
                         <div id="doc-content" class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-                            <textarea style="display:none;" th:utext="${commons.article(article.content)}"></textarea>
+                            <th:block th:utext="${commons.article(article.content)}"></th:block>
+                            <!--<textarea style="display:none;" th:utext="${commons.article(article.content)}"></textarea>-->
                         </div>
-                        <script th:src="@{//cdn.bootcss.com/jquery/2.2.3/jquery.min.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/prettify.min.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/raphael.min.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/underscore.min.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/sequence-diagram.min.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/flowchart.min.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/jquery.flowchart.min.js}"></script>
-                        <script th:src="@{/admin/editormd/src/editormd.js}"></script>
-                        <script th:src="@{/admin/editormd/lib/marked.min.js}"></script>
+                        <!--<script th:src="@{//cdn.bootcss.com/jquery/2.2.3/jquery.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/prettify.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/raphael.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/underscore.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/sequence-diagram.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/flowchart.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/jquery.flowchart.min.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/src/editormd.js}"></script>-->
+                        <!--<script th:src="@{/admin/editormd/lib/marked.min.js}"></script>-->
 
-                        <script type="text/javascript">
-                            $(function () {
-                                editormd.markdownToHTML("doc-content", {//注意：这里是上面DIV的id
-                                    tex: true,
-                                    htmlDecode: true
-                                });});
-                        </script>
+                        <!--<script type="text/javascript">-->
+                            <!--$(function () {-->
+                                <!--editormd.markdownToHTML("doc-content", {//注意：这里是上面DIV的id-->
+                                    <!--tex: true,-->
+                                    <!--htmlDecode: true-->
+                                <!--});});-->
+                        <!--</script>-->
                     </div>
                 </article>
                 <div class="post-spread">
